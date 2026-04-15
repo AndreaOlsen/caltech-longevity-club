@@ -281,6 +281,17 @@ export default function HackathonPage() {
                 </Button>
               </HackathonSponsorDialog>
             </div>
+            <div className="mt-4">
+              <Link
+                href="/Caltech_Longevity_Hackathon_2026_Sponsorship_Packet.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors underline underline-offset-4"
+              >
+                <ExternalLink className="w-4 h-4" />
+                View Sponsorship Brochure
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

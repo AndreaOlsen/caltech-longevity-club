@@ -12,7 +12,12 @@
       "Bash(open http://localhost:3000/hackathon)",
       "Bash(export PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\")",
       "Bash(npx next:*)",
-      "Bash(md5 /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/ayush-ai.webp /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/jp-ai.webp /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/mahi-ai.webp)"
+      "Bash(md5 /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/ayush-ai.webp /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/jp-ai.webp /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/mahi-ai.webp)",
+      "Bash(git config:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)"
     ]
   }
 }
