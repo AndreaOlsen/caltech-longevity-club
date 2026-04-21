@@ -17,7 +17,28 @@
       "Bash(git remote:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m ':*)"
+      "Bash(git commit -m ':*)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"console.log\\(require\\('next/package.json'\\).version\\)\")",
+      "Bash(wait)",
+      "Bash(npx --yes tsc --noEmit)",
+      "Bash(npx tsc:*)",
+      "Bash(tee /tmp/tsc.out)",
+      "Bash(./node_modules/.bin/tsc --noEmit)",
+      "Bash(./node_modules/.bin/next build:*)",
+      "Bash(tee /tmp/build.out)",
+      "Bash(curl -s -o /tmp/home.html -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /tmp/standup.html -w \"%{http_code}\\\\n\" http://localhost:3000/standup)",
+      "Bash(curl -s -o /tmp/new.html -w \"%{http_code}\\\\n\" http://localhost:3000/new-employee)",
+      "Bash(curl -s -X POST http://localhost:3000/api/ai/summarize -H \"Content-Type: application/json\" -d '{\"text\":\"This is a test sentence. Another one follows. And a third one. Extra content beyond.\"}')",
+      "Bash(git init:*)",
+      "Bash(git -c user.email=andrea@local -c user.name=andreaolsen commit -q -m 'Initial CEO dashboard scaffold:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(git check-ignore:*)",
+      "Bash(git -c user.email=andrea@local -c user.name=andreaolsen commit -q -m 'Restyle dashboard with glass-card aesthetic:*)",
+      "Bash(cp ~/Downloads/Ralph_Adolphs.webp /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/ralph-ai.webp)",
+      "Bash(cp ~/Downloads/Antonio-Rangel.webp /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/antonio-rangel-ai.webp)"
     ]
   }
 }

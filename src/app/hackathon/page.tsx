@@ -116,7 +116,7 @@ const scheduleHighlights = [
       { time: "10:00 AM", text: "Sponsor booths open & mentorship begins", icon: Building2 },
       { time: "12:00 PM", text: "Longevity biomarker blood draw with lab partners", icon: FlaskConical },
       { time: "6:00 PM", text: "Career dinner — company recruiting showcase", icon: Sparkles },
-      { time: "8:30 PM", text: "Longevity Rave — DJ set by William", icon: Music },
+      { time: "8:30 PM", text: "Longevity Rave — DJ set by our vice-president William", icon: Music },
       { time: "9:00 PM+", text: "All-night hacking marathon", icon: Clock },
     ],
   },
@@ -140,7 +140,8 @@ const scheduleHighlights = [
 const tracks = [
   {
     name: "LongevityLLM Benchmarking",
-    sponsor: "Insilico Medicine",
+    sponsor: "Sponsored by Insilico Medicine",
+    tag: "AI Longevity track",
     icon: Brain,
     color: "from-purple-500/20 to-purple-600/5 border-purple-500/20",
     iconColor: "text-purple-400",
@@ -150,7 +151,8 @@ const tracks = [
   },
   {
     name: "ARDD Network Intelligence Tool",
-    sponsor: "Insilico Medicine",
+    sponsor: "",
+    tag: "Conference track",
     icon: Network,
     color: "from-blue-500/20 to-blue-600/5 border-blue-500/20",
     iconColor: "text-blue-400",
@@ -160,7 +162,8 @@ const tracks = [
   },
   {
     name: "Longevity Startup Launchpad",
-    sponsor: "VC Track — Build to Fund",
+    sponsor: "",
+    tag: "Entrepreneurship track",
     icon: Rocket,
     color: "from-orange-500/20 to-orange-600/5 border-orange-500/20",
     iconColor: "text-orange-400",
@@ -190,7 +193,7 @@ const activities = [
   {
     icon: Music,
     title: "Longevity Rave",
-    description: "Saturday night DJ set and after-party — because longevity starts with living well",
+    description: "Saturday night DJ set by our vice-president William — because longevity starts with living well",
   },
   {
     icon: Sparkles,
@@ -357,8 +360,11 @@ export default function HackathonPage() {
                   className={`rounded-3xl bg-gradient-to-br ${track.color} border backdrop-blur-sm p-8 flex flex-col`}
                 >
                   <Icon className={`w-10 h-10 ${track.iconColor} mb-4`} strokeWidth={1.5} />
+                  <Badge className="bg-white/10 text-white border-white/20 text-xs mb-3">
+                    {track.tag}
+                  </Badge>
                   <h3 className="text-xl font-bold mb-1">{track.name}</h3>
-                  <p className="text-xs text-muted-foreground mb-4">{track.sponsor}</p>
+                  {track.sponsor && <p className="text-xs text-muted-foreground mb-4">{track.sponsor}</p>}
                   <p className="text-sm text-zinc-300 leading-relaxed mb-6 flex-1">
                     {track.description}
                   </p>
@@ -371,10 +377,6 @@ export default function HackathonPage() {
             })}
           </div>
 
-          <p className="text-xs text-muted-foreground text-center mt-8">
-            Lab partners GlycanAge and Aetas will provide biological age data
-            and testing support where relevant to your project.
-          </p>
         </div>
       </section>
 

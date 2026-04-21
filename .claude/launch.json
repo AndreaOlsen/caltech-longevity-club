@@ -6,6 +6,12 @@
       "runtimeExecutable": "/usr/local/bin/node",
       "runtimeArgs": ["node_modules/.bin/next", "dev"],
       "port": 3000
+    },
+    {
+      "name": "ceo",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /Users/andreaolsen/ceo-dashboard && npm run dev"],
+      "port": 3000
     }
   ]
 }
