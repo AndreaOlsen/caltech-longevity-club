@@ -61,13 +61,6 @@ const team: TeamMember[] = [
     image: "/team/jp-ai.webp",
     links: {},
   },
-
-  {
-    name: "Mahi Ravi",
-    role: "Head of Communications",
-    image: "/team/mahi-ai.webp",
-    links: {},
-  },
 ];
 
 const consultants: AdvisorConsultant[] = [
