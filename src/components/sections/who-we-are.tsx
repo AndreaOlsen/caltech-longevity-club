@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { GraduationCap, Building2, ArrowRight, Globe } from "lucide-react";
 import Link from "next/link";
 import { URLS } from "@/config/urls";
-import { SponsorFormDialog } from "@/components/forms/sponsor-form-dialog";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
 const stats = [
@@ -147,7 +146,17 @@ export function WhoWeAreSection() {
                   scientists and engineers — recruit talent, sponsor research,
                   and shape the field
                 </p>
-                <SponsorFormDialog />
+                <Button asChild className="w-full">
+                  <Link
+                    href={URLS.SPONSOR_FORM}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2"
+                  >
+                    Become a Sponsor
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
           </motion.div>

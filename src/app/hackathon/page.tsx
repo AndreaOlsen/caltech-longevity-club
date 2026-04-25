@@ -30,7 +30,7 @@ import {
   MapPin,
   Mic,
 } from "lucide-react";
-import { HackathonSponsorDialog } from "@/components/forms/hackathon-sponsor-dialog";
+import { URLS } from "@/config/urls";
 
 // ── Placeholder speakers ───────────────────────────────────────────
 const speakers = [
@@ -273,16 +273,22 @@ export default function HackathonPage() {
                   Compete
                 </Link>
               </Button>
-              <HackathonSponsorDialog>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="glass hover:bg-white/10 rounded-full px-10 py-7 text-lg border-white/20 flex items-center gap-2"
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="glass hover:bg-white/10 rounded-full px-10 py-7 text-lg border-white/20"
+              >
+                <Link
+                  href={URLS.SPONSOR_FORM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
                 >
                   <Building2 className="w-5 h-5" />
                   Sponsor
-                </Button>
-              </HackathonSponsorDialog>
+                </Link>
+              </Button>
             </div>
             <div className="mt-4">
               <Link
@@ -569,16 +575,22 @@ export default function HackathonPage() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <HackathonSponsorDialog>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="glass hover:bg-white/10 rounded-full px-10 py-7 text-lg border-white/20 flex items-center gap-2"
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="glass hover:bg-white/10 rounded-full px-10 py-7 text-lg border-white/20"
+              >
+                <Link
+                  href={URLS.SPONSOR_FORM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
                 >
                   Become a Sponsor
                   <ExternalLink className="w-5 h-5" />
-                </Button>
-              </HackathonSponsorDialog>
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
