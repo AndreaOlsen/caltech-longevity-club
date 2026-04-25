@@ -51,8 +51,8 @@ export const events: Event[] = [
   {
     id: "journal-club-series",
     topic: "Longevity Journal Club — Monthly Paper Series",
-    date: "2026-04-30",
-    time: "6:00 PM – 7:30 PM (last Thursday of each month)",
+    date: "2026-05-07",
+    time: "6:00 PM – 7:30 PM (first Thursday of each month)",
     location: "Caltech — visible after RSVP approval",
     featured: true,
     eventType: "journal-club",
