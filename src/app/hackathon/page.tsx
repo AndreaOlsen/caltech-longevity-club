@@ -29,8 +29,10 @@ import {
   Calendar,
   MapPin,
   Mic,
+  HandHeart,
 } from "lucide-react";
 import { URLS } from "@/config/urls";
+import { getEnabledSponsors } from "@/data/sponsors";
 
 // ── Placeholder speakers ───────────────────────────────────────────
 const speakers = [
@@ -38,6 +40,51 @@ const speakers = [
   { label: "Topic TBD", topic: "TBD", time: "TBD", location: "TBD" },
   { label: "Topic TBD", topic: "TBD", time: "TBD", location: "TBD" },
 ];
+
+// ── Sponsor marquee (infinite horizontal scroll) ───────────────────
+function SponsorMarquee() {
+  const sponsors = getEnabledSponsors();
+  // Duplicate the list so the loop is seamless
+  const loop = [...sponsors, ...sponsors];
+
+  return (
+    <div
+      className="relative w-full overflow-hidden py-6"
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
+      }}
+    >
+      <motion.div
+        className="flex gap-12 md:gap-16 items-center w-max"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 40,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        {loop.map((sponsor, i) => (
+          <div
+            key={`${sponsor.name}-${i}`}
+            className="relative h-12 md:h-16 w-32 md:w-40 shrink-0 flex items-center justify-center"
+            title={sponsor.name}
+          >
+            <Image
+              src={sponsor.src}
+              alt={sponsor.name}
+              fill
+              className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+              sizes="160px"
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
 
 // ── Floating particles for high-tech background ────────────────────
 function TechParticles() {
@@ -115,6 +162,7 @@ const scheduleHighlights = [
       { time: "9:00 AM", text: "Opening ceremony — tracks, prizes, mentors", icon: Rocket },
       { time: "10:00 AM", text: "Sponsor booths open & mentorship begins", icon: Building2 },
       { time: "12:00 PM", text: "Longevity biomarker blood draw with lab partners", icon: FlaskConical },
+      { time: "5:00 PM PST", text: "Insilico Medicine featured talk", icon: Brain },
       { time: "6:00 PM", text: "Career dinner — company recruiting showcase", icon: Sparkles },
       { time: "8:30 PM", text: "Longevity Rave — DJ set by our vice-president William", icon: Music },
       { time: "9:00 PM+", text: "All-night hacking marathon", icon: Clock },
@@ -128,8 +176,8 @@ const scheduleHighlights = [
       { time: "8:00 AM", text: "Morning meditation with Wen Chen", icon: HeartPulse },
       { time: "9:00 AM", text: "Longevity breakfast", icon: Coffee },
       { time: "10:30 AM", text: "Functional strength training with Richie Diaz", icon: Dumbbell },
+      { time: "1:00 PM (tentative)", text: "Calico Labs featured talk", icon: Brain },
       { time: "2:30 PM", text: "PROJECT SUBMISSION DEADLINE", icon: Clock },
-      { time: "2:30 PM", text: "Insilico Medicine featured talk", icon: Brain },
       { time: "3:00 PM", text: "Team pitches to judges & investors", icon: Presentation },
       { time: "5:00 PM", text: "PRIZE CEREMONY & closing", icon: Trophy },
     ],
@@ -257,14 +305,14 @@ export default function HackathonPage() {
               most ambitious longevity hackathon on the planet.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
               <Button
                 asChild
                 size="lg"
                 className="gradient-button rounded-full px-10 py-7 text-lg"
               >
                 <Link
-                  href="https://luma.com/uqeiu09a"
+                  href={URLS.HACKATHON_LUMA}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
@@ -289,6 +337,22 @@ export default function HackathonPage() {
                   Sponsor
                 </Link>
               </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="glass hover:bg-white/10 rounded-full px-10 py-7 text-lg border-white/20"
+              >
+                <Link
+                  href={URLS.VOLUNTEER_FORM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <HandHeart className="w-5 h-5" />
+                  Volunteer
+                </Link>
+              </Button>
             </div>
             <div className="mt-4">
               <Link
@@ -300,6 +364,13 @@ export default function HackathonPage() {
                 <ExternalLink className="w-4 h-4" />
                 View Sponsorship Brochure
               </Link>
+            </div>
+
+            <div className="mt-12">
+              <p className="text-xs font-semibold tracking-widest uppercase text-zinc-400 mb-4">
+                Powered by our sponsors
+              </p>
+              <SponsorMarquee />
             </div>
           </motion.div>
         </div>
@@ -566,7 +637,7 @@ export default function HackathonPage() {
                 className="gradient-button rounded-full px-10 py-7 text-lg"
               >
                 <Link
-                  href="https://luma.com/uqeiu09a"
+                  href={URLS.HACKATHON_LUMA}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"

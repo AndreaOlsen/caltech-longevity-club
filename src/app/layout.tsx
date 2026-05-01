@@ -8,6 +8,7 @@ import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { HackathonBanner } from "@/components/HackathonBanner";
 import { Toaster } from "sonner";
 import { MissionMarquee } from "@/components/MissionMarquee";
+import { Analytics } from "@vercel/analytics/next";
 
 // Initialize fonts
 const fontSans = FontSans({
@@ -43,6 +44,7 @@ export default function RootLayout({
         <MissionMarquee />
         <Footer />
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );

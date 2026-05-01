@@ -17,6 +17,11 @@ export const sponsors: Sponsor[] = [
   { name: "Anthropic", src: "/sponsors/anthropic.svg", enabled: true },
   { name: "Calico", src: "/sponsors/calico.svg", enabled: true },
   { name: "Lovable", src: "/sponsors/lovable.svg", enabled: true },
+  { name: "XYZ Ventures", src: "/sponsors/xyz-ventures.webp", enabled: true },
+  { name: "That's it!", src: "/sponsors/thats-it.jpg", enabled: true },
+  { name: "Aetas", src: "/sponsors/aetas.svg", enabled: true },
+  { name: "GlycanAge", src: "/sponsors/glycanage.svg", enabled: true },
+  { name: "Fastshot", src: "/sponsors/fastshot.svg", enabled: true },
 ];
 
 export function getEnabledSponsors(): Sponsor[] {
