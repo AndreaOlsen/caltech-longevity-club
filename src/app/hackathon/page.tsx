@@ -754,7 +754,7 @@ export default function HackathonPage() {
                       alt={speaker.name}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover"
+                      className="object-cover object-top"
                     />
                   ) : (
                     <HelpCircle className="w-20 h-20 text-white/20" strokeWidth={1} />
