@@ -7,7 +7,7 @@ export interface Sponsor {
 export const sponsors: Sponsor[] = [
   { name: "Brogevity", src: "/sponsors/brogevity.png", enabled: false },
   { name: "Caltech", src: "/sponsors/caltech.png", enabled: true },
-  { name: "Insilico", src: "/sponsors/insilico.svg", enabled: true },
+  { name: "Insilico", src: "/sponsors/insilico-medicine.svg", enabled: true },
   { name: "LongevC", src: "/sponsors/longevc.svg", enabled: true },
   { name: "Longevity Pledge", src: "/sponsors/logo-white_Longevity.svg", enabled: true },
   { name: "Retro", src: "/sponsors/retrobio.png.webp", enabled: true },

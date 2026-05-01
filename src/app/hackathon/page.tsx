@@ -255,6 +255,130 @@ const activities = [
   },
 ];
 
+// ── 2026 sponsor tiers ──────────────────────────────────────────────
+type SponsorEntry = {
+  name: string;
+  logo: string;
+  url: string;
+  description: string;
+};
+
+type SponsorTier = {
+  name: string;
+  amount?: string;
+  blurb: string;
+  highlight?: boolean;
+  sponsors: SponsorEntry[];
+};
+
+const sponsorTiers: SponsorTier[] = [
+  {
+    name: "Visionary",
+    amount: "$10,000",
+    blurb: "Headline sponsors — top-of-page visibility, premium booth, private dinner with participants, and tracks aligned to company needs.",
+    highlight: true,
+    sponsors: [
+      {
+        name: "Insilico Medicine",
+        logo: "/sponsors/insilico-medicine.svg",
+        url: "https://insilico.com/",
+        description:
+          "AI-driven drug discovery for aging and age-related disease. Sponsoring the LongevityLLM benchmarking track and contributing the LongevityBench framework.",
+      },
+      {
+        name: "Calico Labs",
+        logo: "/sponsors/calico.svg",
+        url: "https://www.calicolabs.com/",
+        description:
+          "Alphabet-backed research lab tackling the biology that controls lifespan. Featured Demo Day talk and scientific mentorship throughout the weekend.",
+      },
+    ],
+  },
+  {
+    name: "Innovator",
+    amount: "$5,000",
+    blurb: "Dedicated booth, featured speaker slot, access to participant resumes, and a sponsored wellness or recovery zone.",
+    sponsors: [
+      {
+        name: "XYZ Ventures",
+        logo: "/sponsors/xyz-ventures.webp",
+        url: "https://www.xyz.vc/",
+        description:
+          "Early-stage venture capital firm investing in founders building enduring companies. Supporting the entrepreneurship track and VC introductions for top teams.",
+      },
+    ],
+  },
+  {
+    name: "Partner",
+    amount: "$2,500",
+    blurb: "Featured in opening and closing remarks, sponsored workshop slot, and on-site programming for hackers.",
+    sponsors: [
+      {
+        name: "Aetas",
+        logo: "/sponsors/aetas.svg",
+        url: "https://aetas.dk/",
+        description:
+          "Copenhagen-based precision health diagnostics clinic. Lab partner providing biological age and inflammation data for hacker projects.",
+      },
+      {
+        name: "GlycanAge",
+        logo: "/sponsors/glycanage.svg",
+        url: "https://glycanage.com/",
+        description:
+          "Biological age test that measures chronic inflammation through glycan analysis — backed by 30+ years of research. On-site lab partner.",
+      },
+    ],
+  },
+  {
+    name: "Supporter",
+    amount: "$1,000",
+    blurb: "Logo on website and event materials, social media shoutout, swag and product samples to participants, and the ability to bring mentors or judges.",
+    sponsors: [
+      {
+        name: "Longevity Pledge",
+        logo: "/sponsors/logo-white_Longevity.svg",
+        url: "https://longevitypledge.com/",
+        description:
+          "A movement of individuals and organizations pledging resources to extend healthy human lifespan. Mission-aligned partner.",
+      },
+      {
+        name: "That's it!",
+        logo: "/sponsors/thats-it.jpg",
+        url: "https://www.thatsitfruit.com/",
+        description:
+          "Real-fruit healthy snacks made with simple ingredients. Keeping hackers energized through the 30-hour build sprint.",
+      },
+    ],
+  },
+  {
+    name: "Tools & Credits",
+    blurb: "In-kind partners providing the platforms, credits, and products that power the build.",
+    sponsors: [
+      {
+        name: "Anthropic",
+        logo: "/sponsors/anthropic.svg",
+        url: "https://www.anthropic.com/",
+        description:
+          "Safety-first AI research lab behind Claude. Providing API credits to power agentic builds across all three tracks.",
+      },
+      {
+        name: "Lovable",
+        logo: "/sponsors/lovable.svg",
+        url: "https://lovable.dev/",
+        description:
+          "AI-powered app builder. Providing platform credits so teams can ship working prototypes in hours, not weeks.",
+      },
+      {
+        name: "Fastshot",
+        logo: "/sponsors/fastshot.svg",
+        url: "#",
+        description:
+          "Performance and longevity nutrition partner. Fueling hackers with product through the all-night build.",
+      },
+    ],
+  },
+];
+
 // ── 2025 stats ──────────────────────────────────────────────────────
 const stats = [
   { value: "60+", label: "Participants" },
@@ -269,7 +393,7 @@ export default function HackathonPage() {
   return (
     <main className="flex min-h-screen flex-col bg-black">
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full min-h-[85vh] flex flex-col justify-center overflow-hidden">
         <TechParticles />
         {/* Background image */}
         <div className="absolute inset-0 z-0">
@@ -283,7 +407,7 @@ export default function HackathonPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 md:px-6 text-center max-w-4xl py-20">
+        <div className="relative z-10 container mx-auto px-4 md:px-6 text-center max-w-4xl py-20 flex-1 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -366,13 +490,15 @@ export default function HackathonPage() {
               </Link>
             </div>
 
-            <div className="mt-12">
-              <p className="text-xs font-semibold tracking-widest uppercase text-zinc-400 mb-4">
-                Powered by our sponsors
-              </p>
-              <SponsorMarquee />
-            </div>
           </motion.div>
+        </div>
+
+        {/* Full-width sponsor marquee at bottom of hero */}
+        <div className="relative z-10 w-full pb-8">
+          <p className="text-xs font-semibold tracking-widest uppercase text-zinc-400 mb-4 text-center">
+            Powered by our sponsors
+          </p>
+          <SponsorMarquee />
         </div>
       </section>
 
@@ -609,6 +735,114 @@ export default function HackathonPage() {
                   <p className="font-semibold text-white/80">TBD</p>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Thank You to Our Sponsors ────────────────────────── */}
+      <section className="w-full py-20 bg-white/[0.02] border-t border-white/5">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <motion.div
+            className="text-center mb-14"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm font-semibold tracking-widest uppercase text-orange-400 mb-3">
+              2026 Hackathon
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Thank You to Our Sponsors
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              The hackathon would not be possible without the generosity and
+              partnership of these companies and organizations.
+            </p>
+          </motion.div>
+
+          <div className="space-y-16">
+            {sponsorTiers.map((tier) => (
+              <div key={tier.name}>
+                <motion.div
+                  className="text-center mb-8"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="inline-flex items-baseline gap-3">
+                    <h3
+                      className={`text-2xl md:text-3xl font-bold ${
+                        tier.highlight ? "text-orange-400" : "text-white"
+                      }`}
+                    >
+                      {tier.name}
+                    </h3>
+                    {tier.amount && (
+                      <span className="text-sm font-semibold text-orange-400/80">
+                        {tier.amount}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground max-w-2xl mx-auto mt-2">
+                    {tier.blurb}
+                  </p>
+                </motion.div>
+
+                <div
+                  className={`grid gap-6 ${
+                    tier.highlight
+                      ? "sm:grid-cols-2"
+                      : "sm:grid-cols-2 lg:grid-cols-3"
+                  }`}
+                >
+                  {tier.sponsors.map((sponsor, i) => (
+                    <motion.a
+                      key={sponsor.name}
+                      href={sponsor.url}
+                      target={sponsor.url !== "#" ? "_blank" : undefined}
+                      rel={
+                        sponsor.url !== "#"
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.04 }}
+                      className={`group rounded-2xl border p-6 transition-all flex flex-col ${
+                        tier.highlight
+                          ? "bg-gradient-to-br from-orange-500/10 to-orange-600/5 border-orange-500/20 hover:border-orange-500/50"
+                          : "bg-white/5 border-white/5 hover:border-orange-500/30 hover:bg-white/[0.07]"
+                      }`}
+                    >
+                      <div className="relative h-14 mb-4 flex items-center">
+                        <div className="relative h-full w-40">
+                          <Image
+                            src={sponsor.logo}
+                            alt={sponsor.name}
+                            fill
+                            sizes="160px"
+                            className="object-contain object-left opacity-90 group-hover:opacity-100 transition-opacity"
+                          />
+                        </div>
+                      </div>
+                      <h3 className="font-semibold mb-2 text-white">
+                        {sponsor.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                        {sponsor.description}
+                      </p>
+                      {sponsor.url !== "#" && (
+                        <span className="mt-4 inline-flex items-center gap-1.5 text-xs text-orange-400 group-hover:text-orange-300 transition-colors">
+                          Visit site
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </span>
+                      )}
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
