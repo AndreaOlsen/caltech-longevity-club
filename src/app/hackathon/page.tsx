@@ -30,15 +30,49 @@ import {
   MapPin,
   Mic,
   HandHeart,
+  MessageCircle,
 } from "lucide-react";
 import { URLS } from "@/config/urls";
 import { getEnabledSponsors } from "@/data/sponsors";
 
-// ── Placeholder speakers ───────────────────────────────────────────
-const speakers = [
-  { label: "Intro Speaker", topic: "TBD", time: "TBD", location: "TBD" },
-  { label: "Topic TBD", topic: "TBD", time: "TBD", location: "TBD" },
-  { label: "Topic TBD", topic: "TBD", time: "TBD", location: "TBD" },
+// ── Speakers ───────────────────────────────────────────────────────
+type Speaker = {
+  name: string;
+  role: string;
+  label: string;
+  topic: string;
+  time: string;
+  location: string;
+  photo?: string;
+};
+
+const speakers: Speaker[] = [
+  {
+    name: "Alex Zhavoronkov",
+    role: "Founder & CEO, Insilico Medicine",
+    label: "Featured Talk",
+    topic: "AI for longevity drug discovery",
+    time: "Sat May 23 · 5:00 PM PST",
+    location: "Caltech Campus",
+    photo: "/speakers/alex-zhavoronkov.webp",
+  },
+  {
+    name: "Matt Onsum",
+    role: "Calico Labs",
+    label: "Featured Talk",
+    topic: "TBD",
+    time: "Sun May 24 · 1:00 PM (tentative)",
+    location: "Caltech Campus",
+    photo: "/speakers/matt-onsum.jpg",
+  },
+  {
+    name: "TBD",
+    role: "",
+    label: "Topic TBD",
+    topic: "TBD",
+    time: "TBD",
+    location: "TBD",
+  },
 ];
 
 // ── Sponsor marquee (infinite horizontal scroll) ───────────────────
@@ -48,15 +82,7 @@ function SponsorMarquee() {
   const loop = [...sponsors, ...sponsors];
 
   return (
-    <div
-      className="relative w-full overflow-hidden py-6"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
-      }}
-    >
+    <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden py-6">
       <motion.div
         className="flex gap-12 md:gap-16 items-center w-max"
         animate={{ x: ["0%", "-50%"] }}
@@ -273,9 +299,9 @@ type SponsorTier = {
 
 const sponsorTiers: SponsorTier[] = [
   {
-    name: "Visionary",
-    amount: "$10,000",
-    blurb: "Headline sponsors — top-of-page visibility, premium booth, private dinner with participants, and tracks aligned to company needs.",
+    name: "Innovator",
+    amount: "$5,000",
+    blurb: "Headline sponsor — top-of-page visibility, dedicated booth, featured speaker slot, and a sponsored hackathon track.",
     highlight: true,
     sponsors: [
       {
@@ -285,19 +311,12 @@ const sponsorTiers: SponsorTier[] = [
         description:
           "AI-driven drug discovery for aging and age-related disease. Sponsoring the LongevityLLM benchmarking track and contributing the LongevityBench framework.",
       },
-      {
-        name: "Calico Labs",
-        logo: "/sponsors/calico.svg",
-        url: "https://www.calicolabs.com/",
-        description:
-          "Alphabet-backed research lab tackling the biology that controls lifespan. Featured Demo Day talk and scientific mentorship throughout the weekend.",
-      },
     ],
   },
   {
-    name: "Innovator",
-    amount: "$5,000",
-    blurb: "Dedicated booth, featured speaker slot, access to participant resumes, and a sponsored wellness or recovery zone.",
+    name: "Partner",
+    amount: "$2,000–$2,500",
+    blurb: "Featured in opening and closing remarks, sponsored workshop slot, and direct access to participants.",
     sponsors: [
       {
         name: "XYZ Ventures",
@@ -306,12 +325,32 @@ const sponsorTiers: SponsorTier[] = [
         description:
           "Early-stage venture capital firm investing in founders building enduring companies. Supporting the entrepreneurship track and VC introductions for top teams.",
       },
+      {
+        name: "Longevity Pledge",
+        logo: "/sponsors/logo-white_Longevity.svg",
+        url: "https://longevitypledge.com/",
+        description:
+          "A movement of individuals and organizations pledging resources to extend healthy human lifespan. Mission-aligned partner.",
+      },
     ],
   },
   {
-    name: "Partner",
-    amount: "$2,500",
-    blurb: "Featured in opening and closing remarks, sponsored workshop slot, and on-site programming for hackers.",
+    name: "Supporter",
+    amount: "$1,000",
+    blurb: "Logo on website and event materials, social media shoutout, and the ability to bring mentors or judges.",
+    sponsors: [
+      {
+        name: "Calico Labs",
+        logo: "/sponsors/calico.svg",
+        url: "https://www.calicolabs.com/",
+        description:
+          "Alphabet-backed research lab tackling the biology that controls lifespan. Featured Demo Day talk and judging final team pitches.",
+      },
+    ],
+  },
+  {
+    name: "Longevity Products",
+    blurb: "On-site product partners providing diagnostics, nutrition, and recovery to fuel and measure hackers through the weekend.",
     sponsors: [
       {
         name: "Aetas",
@@ -327,46 +366,12 @@ const sponsorTiers: SponsorTier[] = [
         description:
           "Biological age test that measures chronic inflammation through glycan analysis — backed by 30+ years of research. On-site lab partner.",
       },
-    ],
-  },
-  {
-    name: "Supporter",
-    amount: "$1,000",
-    blurb: "Logo on website and event materials, social media shoutout, swag and product samples to participants, and the ability to bring mentors or judges.",
-    sponsors: [
-      {
-        name: "Longevity Pledge",
-        logo: "/sponsors/logo-white_Longevity.svg",
-        url: "https://longevitypledge.com/",
-        description:
-          "A movement of individuals and organizations pledging resources to extend healthy human lifespan. Mission-aligned partner.",
-      },
       {
         name: "That's it!",
         logo: "/sponsors/thats-it.jpg",
         url: "https://www.thatsitfruit.com/",
         description:
-          "Real-fruit healthy snacks made with simple ingredients. Keeping hackers energized through the 30-hour build sprint.",
-      },
-    ],
-  },
-  {
-    name: "Tools & Credits",
-    blurb: "In-kind partners providing the platforms, credits, and products that power the build.",
-    sponsors: [
-      {
-        name: "Anthropic",
-        logo: "/sponsors/anthropic.svg",
-        url: "https://www.anthropic.com/",
-        description:
-          "Safety-first AI research lab behind Claude. Providing API credits to power agentic builds across all three tracks.",
-      },
-      {
-        name: "Lovable",
-        logo: "/sponsors/lovable.svg",
-        url: "https://lovable.dev/",
-        description:
-          "AI-powered app builder. Providing platform credits so teams can ship working prototypes in hours, not weeks.",
+          "Real-fruit longevity snacks made with simple ingredients. Keeping hackers energized through the 30-hour build sprint.",
       },
       {
         name: "Fastshot",
@@ -374,6 +379,19 @@ const sponsorTiers: SponsorTier[] = [
         url: "#",
         description:
           "Performance and longevity nutrition partner. Fueling hackers with product through the all-night build.",
+      },
+    ],
+  },
+  {
+    name: "Tools & Credits",
+    blurb: "In-kind partners providing the platforms and credits that power the build.",
+    sponsors: [
+      {
+        name: "Lovable",
+        logo: "/sponsors/lovable.svg",
+        url: "https://lovable.dev/",
+        description:
+          "AI-powered app builder. Providing platform credits so teams can ship working prototypes in hours, not weeks.",
       },
     ],
   },
@@ -478,7 +496,7 @@ export default function HackathonPage() {
                 </Link>
               </Button>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 flex flex-col sm:flex-row gap-x-6 gap-y-2 justify-center items-center">
               <Link
                 href="/Caltech_Longevity_Hackathon_2026_Sponsorship_Packet.pdf"
                 target="_blank"
@@ -487,6 +505,15 @@ export default function HackathonPage() {
               >
                 <ExternalLink className="w-4 h-4" />
                 View Sponsorship Brochure
+              </Link>
+              <Link
+                href={URLS.HACKATHON_SLACK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors underline underline-offset-4"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Join Hackathon Slack (approval required)
               </Link>
             </div>
 
@@ -713,9 +740,18 @@ export default function HackathonPage() {
                 transition={{ delay: i * 0.1 }}
                 className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 overflow-hidden"
               >
-                {/* Silhouette placeholder */}
                 <div className="relative aspect-[4/3] bg-gradient-to-b from-zinc-700/30 to-zinc-900/50 flex items-center justify-center">
-                  <HelpCircle className="w-20 h-20 text-white/20" strokeWidth={1} />
+                  {speaker.photo ? (
+                    <Image
+                      src={speaker.photo}
+                      alt={speaker.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <HelpCircle className="w-20 h-20 text-white/20" strokeWidth={1} />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
                 <div className="p-5">
@@ -725,14 +761,20 @@ export default function HackathonPage() {
                   <div className="flex items-center gap-4 text-xs text-muted-foreground mb-2">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5 text-orange-400" />
-                      Time TBD
+                      {speaker.time}
                     </span>
                     <span className="flex items-center gap-1">
                       <MapPin className="w-3.5 h-3.5 text-orange-400" />
-                      Location TBD
+                      {speaker.location}
                     </span>
                   </div>
-                  <p className="font-semibold text-white/80">TBD</p>
+                  <p className="font-semibold text-white">{speaker.name}</p>
+                  {speaker.role && (
+                    <p className="text-xs text-muted-foreground mt-1">{speaker.role}</p>
+                  )}
+                  {speaker.topic && speaker.topic !== "TBD" && (
+                    <p className="text-sm text-zinc-300 mt-2">{speaker.topic}</p>
+                  )}
                 </div>
               </motion.div>
             ))}

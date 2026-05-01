@@ -5,4 +5,6 @@ export const URLS = {
   VOLUNTEER_FORM:
     "https://docs.google.com/forms/d/e/1FAIpQLSe5xHUEfvlbUAJQLmXNCTAW6SnXtp0Xg9MdkBmpWSycsSQQ5A/viewform?usp=sharing&ouid=112920172754098538329",
   HACKATHON_LUMA: "https://luma.com/uqeiu09a",
+  HACKATHON_SLACK:
+    "https://join.slack.com/t/caltechlongev-kjg9632/shared_invite/zt-3wzqjg5mp-iyJ0Q_~6FTimLzn9yg4Yqg",
 } as const;
