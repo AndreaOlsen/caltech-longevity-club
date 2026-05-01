@@ -373,25 +373,32 @@ const sponsorTiers: SponsorTier[] = [
         description:
           "Real-fruit longevity snacks made with simple ingredients. Keeping hackers energized through the 30-hour build sprint.",
       },
-      {
-        name: "Fastshot",
-        logo: "/sponsors/fastshot.svg",
-        url: "#",
-        description:
-          "Performance and longevity nutrition partner. Fueling hackers with product through the all-night build.",
-      },
     ],
   },
   {
     name: "Tools & Credits",
-    blurb: "In-kind partners providing the platforms and credits that power the build.",
+    blurb: "In-kind partners providing the platforms, credits, and products that power the build.",
     sponsors: [
+      {
+        name: "Anthropic",
+        logo: "/sponsors/anthropic.svg",
+        url: "https://www.anthropic.com/",
+        description:
+          "Safety-first AI research lab behind Claude. Providing API credits to power agentic builds across all three tracks.",
+      },
       {
         name: "Lovable",
         logo: "/sponsors/lovable.svg",
         url: "https://lovable.dev/",
         description:
           "AI-powered app builder. Providing platform credits so teams can ship working prototypes in hours, not weeks.",
+      },
+      {
+        name: "Fastshot",
+        logo: "/sponsors/fastshot.svg",
+        url: "#",
+        description:
+          "Performance and longevity nutrition partner. Fueling hackers with product through the all-night build.",
       },
     ],
   },
