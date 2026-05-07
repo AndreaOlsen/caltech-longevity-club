@@ -39,7 +39,23 @@
       "Bash(git -c user.email=andrea@local -c user.name=andreaolsen commit -q -m 'Restyle dashboard with glass-card aesthetic:*)",
       "Bash(cp ~/Downloads/Ralph_Adolphs.webp /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/ralph-ai.webp)",
       "Bash(cp ~/Downloads/Antonio-Rangel.webp /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/team/antonio-rangel-ai.webp)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "WebSearch",
+      "WebFetch(domain:www.xyz.vc)",
+      "WebFetch(domain:www.thatsitfruit.com)",
+      "WebFetch(domain:aetas.dk)",
+      "WebFetch(domain:glycanage.com)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" -o xyz-ventures.png \"https://images.squarespace-cdn.com/content/v1/5f3b1e890e220740514c27af/1598069992868-L3J8WGGK8WR9PT18520E/xyz-logo.png?format=1500w\")",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" -o thats-it.jpg \"https://www.thatsitfruit.com/cdn/shop/files/Logo_320x320_792ec94f-a065-420f-a152-d664429c2820_300x300.jpg?v=1613210801\")",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" -o glycanage.svg \"https://www.glycanage.com/images/GlycanAge.svg\")",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://aetas.dk/\" -o /tmp/aetas.html)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" -o aetas.svg \"https://aetas.dk/images/LogoAetas.svg\")",
+      "WebFetch(domain:caltechlongevity.devpost.com)",
+      "Bash(npm i *)",
+      "WebFetch(domain:insilico.com)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" -o insilico-medicine.svg \"https://static.tildacdn.net/tild3632-6633-4538-b566-356133336365/ISM_Badge.svg\")",
+      "Bash(cp \"/Users/andreaolsen/Downloads/0031U00002D3rYxQAJ-e4462e377f280146d8c155d6c3c00f49.webp\" /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/speakers/alex-zhavoronkov.webp)",
+      "Bash(cp \"/Users/andreaolsen/Downloads/Matt-Onsum-JPG \\(1\\).jpg\" /Users/andreaolsen/Downloads/caltech-longevity-club-main/public/speakers/matt-onsum.jpg)"
     ]
   }
 }
