@@ -8,7 +8,7 @@ export const sponsors: Sponsor[] = [
   { name: "Brogevity", src: "/sponsors/brogevity.png", enabled: false },
   { name: "Caltech", src: "/sponsors/caltech.png", enabled: true },
   { name: "Insilico", src: "/sponsors/insilico-medicine.svg", enabled: true },
-  { name: "LongevC", src: "/sponsors/longevc.svg", enabled: true },
+  { name: "LongevC", src: "/sponsors/longevc.svg", enabled: false },
   { name: "Longevity Pledge", src: "/sponsors/logo-white_Longevity.svg", enabled: true },
   { name: "Retro", src: "/sponsors/retrobio.png.webp", enabled: true },
   { name: "True Diagnostics", src: "/sponsors/truediagnostics.png", enabled: true },
@@ -22,6 +22,8 @@ export const sponsors: Sponsor[] = [
   { name: "Aetas", src: "/sponsors/aetas.svg", enabled: true },
   { name: "GlycanAge", src: "/sponsors/glycanage.svg", enabled: true },
   { name: "Fastshot", src: "/sponsors/fastshot.svg", enabled: true },
+  { name: "Luria Health", src: "/sponsors/luria-health.svg", enabled: true },
+  { name: "Bright Data", src: "/sponsors/brightdata.svg", enabled: true },
 ];
 
 export function getEnabledSponsors(): Sponsor[] {

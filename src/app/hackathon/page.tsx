@@ -46,6 +46,33 @@ type Speaker = {
   photo?: string;
 };
 
+type Judge = {
+  name: string;
+  role: string;
+  photo?: string;
+};
+
+const judges: Judge[] = [
+  {
+    name: "Andrea Olsen",
+    role: "President & Founder, Caltech Longevity Club",
+    photo: "/judges/andrea-olsen.png",
+  },
+  {
+    name: "Matt Onsum",
+    role: "Calico Labs",
+    photo: "/speakers/matt-onsum.jpg",
+  },
+  {
+    name: "TBD",
+    role: "",
+  },
+  {
+    name: "TBD",
+    role: "",
+  },
+];
+
 const speakers: Speaker[] = [
   {
     name: "Alex Zhavoronkov",
@@ -311,6 +338,13 @@ const sponsorTiers: SponsorTier[] = [
         description:
           "AI-driven drug discovery for aging and age-related disease. Sponsoring the LongevityLLM benchmarking track and contributing the LongevityBench framework.",
       },
+      {
+        name: "Luria Health",
+        logo: "/sponsors/luria-health.svg",
+        url: "#",
+        description:
+          "AI-powered longevity software for the heavy-industry workforce. Headline sponsor of the 2026 Caltech Longevity Hackathon.",
+      },
     ],
   },
   {
@@ -399,6 +433,13 @@ const sponsorTiers: SponsorTier[] = [
         url: "#",
         description:
           "Performance and longevity nutrition partner. Fueling hackers with product through the all-night build.",
+      },
+      {
+        name: "Bright Data",
+        logo: "/sponsors/brightdata.svg",
+        url: "https://brightdata.com/",
+        description:
+          "Web data infrastructure for AI — proxies, scrapers, and ready-to-use datasets. Providing platform credits to power data-hungry hackathon builds.",
       },
     ],
   },
@@ -781,6 +822,68 @@ export default function HackathonPage() {
                   )}
                   {speaker.topic && speaker.topic !== "TBD" && (
                     <p className="text-sm text-zinc-300 mt-2">{speaker.topic}</p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Judges ──────────────────────────────────────────── */}
+      <section className="w-full py-20 relative overflow-hidden">
+        <TechParticles />
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
+          <motion.div
+            className="text-center mb-14"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm font-semibold tracking-widest uppercase text-orange-400 mb-3">
+              A Round of Applause for Our
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold">
+              Hackathon <span className="text-orange-400">Judges</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto mt-4">
+              Our judges bring deep expertise across longevity science, drug
+              discovery, and venture investing &mdash; evaluating Demo Day
+              submissions and selecting the teams that take home prizes.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {judges.map((judge, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 overflow-hidden"
+              >
+                <div className="relative aspect-[4/3] bg-gradient-to-b from-zinc-700/30 to-zinc-900/50 flex items-center justify-center">
+                  {judge.photo ? (
+                    <Image
+                      src={judge.photo}
+                      alt={judge.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-top"
+                    />
+                  ) : (
+                    <HelpCircle className="w-20 h-20 text-white/20" strokeWidth={1} />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </div>
+                <div className="p-5">
+                  <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30 text-xs mb-3">
+                    Judge
+                  </Badge>
+                  <p className="font-semibold text-white">{judge.name}</p>
+                  {judge.role && (
+                    <p className="text-xs text-muted-foreground mt-1">{judge.role}</p>
                   )}
                 </div>
               </motion.div>
