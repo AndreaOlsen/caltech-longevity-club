@@ -55,7 +55,7 @@ type Judge = {
 const judges: Judge[] = [
   {
     name: "Andrea Olsen",
-    role: "President & Founder, Caltech Longevity Club",
+    role: "Founder & CEO, Luria Health",
     photo: "/judges/andrea-olsen.png",
   },
   {
@@ -341,7 +341,7 @@ const sponsorTiers: SponsorTier[] = [
       {
         name: "Luria Health",
         logo: "/sponsors/luria-health.svg",
-        url: "#",
+        url: "https://luria.health/",
         description:
           "AI-powered longevity software for the heavy-industry workforce. Headline sponsor of the 2026 Caltech Longevity Hackathon.",
       },
@@ -430,7 +430,7 @@ const sponsorTiers: SponsorTier[] = [
       {
         name: "Fastshot",
         logo: "/sponsors/fastshot.svg",
-        url: "#",
+        url: "https://fastshot.ai/",
         description:
           "Performance and longevity nutrition partner. Fueling hackers with product through the all-night build.",
       },
