@@ -30,7 +30,6 @@ import {
   MapPin,
   Mic,
   HandHeart,
-  MessageCircle,
 } from "lucide-react";
 import { URLS } from "@/config/urls";
 import { getEnabledSponsors } from "@/data/sponsors";
@@ -553,15 +552,6 @@ export default function HackathonPage() {
               >
                 <ExternalLink className="w-4 h-4" />
                 View Sponsorship Brochure
-              </Link>
-              <Link
-                href={URLS.HACKATHON_SLACK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors underline underline-offset-4"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Join Hackathon Slack (approval required)
               </Link>
             </div>
 
