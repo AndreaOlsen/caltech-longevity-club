@@ -421,6 +421,13 @@ const sponsorTiers: SponsorTier[] = [
         description:
           "Real-fruit longevity snacks made with simple ingredients. Keeping hackers energized through the 30-hour build sprint.",
       },
+      {
+        name: "KOR Shots",
+        logo: "/sponsors/kor.png",
+        url: "https://korshots.com/",
+        description:
+          "Functional energy shots formulated with adaptogens and clean ingredients. Powering hackers through the all-night build without the crash.",
+      },
     ],
   },
   {
