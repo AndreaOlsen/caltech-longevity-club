@@ -92,12 +92,13 @@ const speakers: Speaker[] = [
     photo: "/speakers/matt-onsum.jpg",
   },
   {
-    name: "TBD",
-    role: "",
-    label: "Topic TBD",
-    topic: "TBD",
+    name: "Nikolina Lauc",
+    role: "CEO, GlycanAge",
+    label: "Featured Talk",
+    topic: "GlycanAge epigenetic approach",
     time: "TBD",
-    location: "TBD",
+    location: "Caltech Campus",
+    photo: "/speakers/nikolina-lauc.jpg",
   },
 ];
 
@@ -344,6 +345,20 @@ const sponsorTiers: SponsorTier[] = [
         description:
           "AI-powered longevity software for the heavy-industry workforce. Headline sponsor of the 2026 Caltech Longevity Hackathon.",
       },
+      {
+        name: "LongeVC",
+        logo: "/sponsors/longevc.svg",
+        url: "https://longevc.com/",
+        description:
+          "Venture capital firm investing in early-stage biotech and longevity companies tackling the molecular mechanisms of aging, diagnostics, and healthcare infrastructure.",
+      },
+      {
+        name: "AniVC",
+        logo: "/sponsors/anivc.svg",
+        url: "https://ani.vc/",
+        description:
+          "The venture fund for pets — backing founders building the future of animal health, diagnostics, and pet longevity.",
+      },
     ],
   },
   {
@@ -481,6 +496,18 @@ export default function HackathonPage() {
             <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30 text-sm mb-6">
               May 22 &ndash; 24, 2026 &middot; Caltech Campus
             </Badge>
+
+            <div className="flex justify-center mb-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-sm text-emerald-300">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                </span>
+                <span>
+                  <span className="font-semibold">175+</span> hackers already signed up
+                </span>
+              </div>
+            </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
               <span className="header-text-glow">LONGEVITY</span>
