@@ -248,7 +248,7 @@ const tracks = [
     iconColor: "text-purple-400",
     description:
       "Build new benchmark tasks for large language models in longevity biology. Extend the LongevityBench framework, create agentic automation pipelines, and evaluate Insilico Medicine's fine-tuned LongevityLLM.",
-    prize: "Co-authorship on a peer-reviewed publication with the Insilico Medicine team",
+    prize: "$1,000 cash prize + co-authorship on a peer-reviewed publication with the Insilico Medicine team",
   },
   {
     name: "ARDD Network Intelligence Tool",
@@ -259,7 +259,7 @@ const tracks = [
     iconColor: "text-blue-400",
     description:
       "Build an interactive web app mapping the ARDD conference community — the leading aging research and drug discovery event. Rich profiles, in-app messaging, and a working demo for ARDD 2026.",
-    prize: "Sponsored trip to ARDD 2026 in Boston to present the tool to the conference community",
+    prize: "$1,000 cash prize + sponsored trip to ARDD 2026 in Boston to present the tool to the conference community",
   },
   {
     name: "Longevity Startup Launchpad",
@@ -270,7 +270,7 @@ const tracks = [
     iconColor: "text-orange-400",
     description:
       "Form a longevity startup concept in any vertical — diagnostics, therapeutics, wellness, data infrastructure, consumer health, or clinical tools. Build a prototype, craft a pitch deck, and demo live to investors.",
-    prize: "Introduction to CLC's VC partner network with facilitated follow-on meetings for top teams",
+    prize: "$1,500 cash prize + introduction to CLC's VC partner network with facilitated follow-on meetings for top teams",
   },
 ];
 
