@@ -511,7 +511,7 @@ export default function HackathonPage() {
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
                 </span>
                 <span>
-                  <span className="font-semibold">175+</span> hackers already signed up
+                  <span className="font-semibold">215+</span> hackers already signed up
                 </span>
               </div>
             </div>
